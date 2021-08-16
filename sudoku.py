@@ -55,17 +55,23 @@ def valid(x, i, j):
                 block.append(puzzle[k][e])
     return x not in row and x not in col and x not in block
 
-def solve():
-    for i in range(len(puzzle[0])):
-        for j in range(len(puzzle[0])):
-            pass
+def solve(i, j):
+    
+    if puzzle[i][j] == 0:
+        for k in range(len(puzzle)):
+            if valid(k, i, j):
+                puzzle[i][j] = k
+            
 
 def main():
     # print_sudoku(puzzle)
-    if valid(3, 5, 2):
-        print("we good")
-    else:
-        print("we no good")
+    for i in range(len(puzzle[0])):
+        for j in range(len(puzzle)):
+
+    # if valid(3, 5, 2):
+    #     print("we good")
+    # else:
+    #     print("we no good")
 
 if __name__ == "__main__":
     main()
